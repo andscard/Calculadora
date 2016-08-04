@@ -8,6 +8,7 @@ package calculadora1;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -74,12 +75,22 @@ public class PanelOrganizador {
     
      public VBox vboxOperaciones(){
      vbox_operaciones = new VBox(10);
-     Button bt_sumar = new Button(String.valueOf('+'));
+     Button bt_sumar = new Button("+");
      Button bt_restar = new Button("-");
      Button bt_multiplicar = new Button("*");
      Button bt_dividir=new Button("/");
-     vbox_operaciones.getChildren().addAll(bt_sumar,bt_restar,bt_multiplicar,bt_dividir);
     
+     bt_sumar.setPrefSize(40, 40);
+     bt_sumar.setMinSize(Button.USE_PREF_SIZE, Button.USE_PREF_SIZE);
+     bt_restar.setPrefSize(40, 40);
+     bt_restar.setMinSize(Button.USE_PREF_SIZE, Button.USE_PREF_SIZE);
+     bt_multiplicar.setPrefSize(40, 40);
+     bt_multiplicar.setMinSize(Button.USE_PREF_SIZE, Button.USE_PREF_SIZE);
+     bt_dividir.setPrefSize(40, 40);
+     bt_dividir.setMinSize(Button.USE_PREF_SIZE, Button.USE_PREF_SIZE);
+     
+     vbox_operaciones.getChildren().addAll(bt_sumar,bt_restar,bt_multiplicar,bt_dividir);
+     vbox_operaciones.setAlignment(Pos.CENTER);
      bt_sumar.setOnAction(new ClickHandler4()); 
      bt_restar.setOnAction(new ClickHandler5());
      bt_multiplicar.setOnAction(new ClickHandler6());
@@ -90,12 +101,19 @@ public class PanelOrganizador {
      
      public VBox vboxAuxiliares(){
      vbox_auxiliares = new VBox(10);
+     //vbox_auxiliares.setPrefSize(60, 200);
      Button bt_delete = new Button("DEL");
-     bt_delete.setPrefWidth(60);
+     //bt_delete.setPrefWidth(60);
      Button bt_reset = new Button("AC");
      Button bt_result = new Button("=");
-     bt_result.setPrefSize(60, 100);
-
+     //bt_result.setPrefSize(60, 100);
+      bt_delete.setPrefSize(55, 40);
+     bt_delete.setMinSize(Button.USE_PREF_SIZE, Button.USE_PREF_SIZE);
+     bt_reset.setPrefSize(55, 40);
+     bt_reset.setMinSize(Button.USE_PREF_SIZE, Button.USE_PREF_SIZE);
+     bt_result.setPrefSize(55, 90);
+     bt_result.setMinSize(Button.USE_PREF_SIZE, Button.USE_PREF_SIZE);
+    
      vbox_auxiliares.getChildren().addAll(bt_delete,bt_reset,bt_result);
      bt_reset.setOnAction(new ClickHandler1()); 
      bt_result.setOnAction(new ClickHandler2()); 

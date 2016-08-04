@@ -54,7 +54,7 @@ public class ArregloBotones {
         
         HBox f4=new HBox(10);
         f4.getChildren().addAll(this.botones[3][1]);
-        this.botones[3][1].setPrefWidth(100);
+        this.botones[3][1].setPrefWidth(150);
    
         this.vbox_botones_numeros.getChildren().addAll(f1, f2, f3,f4);
         
